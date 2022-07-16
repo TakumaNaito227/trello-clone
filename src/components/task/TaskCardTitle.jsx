@@ -20,13 +20,28 @@ const TaskCardTitle = () => {
     setIsClick(false);
   };
 
+  const handleBlur = () => {
+    setIsClick(false);
+  };
+
   return (
     <div onClick={handleClick}>
       {isClick ? (
         // onSubmit -> enterを押したら起こるイベント処理
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="taskCardTitleInputArea">
           {/* // onChange ->  フォーム内のエレメント（要素）の内容が変更された時に起こるイベント処理*/}
-          <input type="text" onChange={handleChange} />
+          <input className="taskCardTitleInput"
+            // インプットタグを押したら自動で入力できる状態になる
+            autoFocus
+            type="text"
+            onChange={handleChange}
+            // インプットタグから外れてクリックした時に起こるイベント処理
+            onBlur={handleBlur}
+            // インプットタグをクリックすると文字列が消えない様にする
+            value={inputCardTitle}
+            // 文字数制限
+            maxLength="10"
+          />
         </form>
       ) : (
         <h3>{inputCardTitle}</h3>
