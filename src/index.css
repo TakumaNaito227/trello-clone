@@ -15,12 +15,19 @@ header {
   text-align: center;
   padding: 4px 10%;
   margin-bottom: 50px;
-  background-color: cadetblue;
+  background-color: rgb(52, 108, 74);
 }
 
 .app {
-  background: url(../src/images/sea.jpg);
+  background: url(../src/images/trees-gbe4727d12_1920.jpg);
   background-repeat: no-repeat;
   height: 100vh;
-  width: auto;
+}
+
+.taskCard {
+  width: 250px;
+  padding: 10px 25px;
+  margin:  10px 1%;
+  background-color: rgb(91, 154, 134);
+  border-radius: 5px;
 }
