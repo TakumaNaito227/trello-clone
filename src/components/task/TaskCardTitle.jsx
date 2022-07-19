@@ -10,7 +10,6 @@ const TaskCardTitle = () => {
   };
 
   const handleChange = (e) => {
-    console.log(inputCardTitle);
     setinputCardTitle(e.target.value);
   };
 
