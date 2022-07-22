@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import { useCallback } from "react";
 import TaskAddInput from "./input/TaskAddInput";
 import TaskCardDeleteButton from "./TaskCardDeleteButton";
 import TaskCardTitle from "./TaskCardTitle";
 import Tasks from "./Tasks";
 
 export default function TaskCard() {
-  conat[(inputText, setInputText)] = useState("");
-  conat[(taskList, setTaskList)] = useState([]);
+  const [inputText, setInputText] = useState("");
+  const [taskList, setTaskList] = useState([]);
   return (
     <div className="taskCard">
       <TaskCardTitle />
@@ -18,7 +17,7 @@ export default function TaskCard() {
         setTextList={setTaskList}
         taskList={taskList}
       />
-      <Tasks />
+      <Tasks inputText={inputText} taskList={taskList} />
     </div>
   );
 }
