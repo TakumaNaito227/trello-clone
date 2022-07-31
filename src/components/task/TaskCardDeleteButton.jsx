@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TaskCardDeleteButton = () => {
+export const TaskCardDeleteButton = () => {
   return (
     <div>
       
@@ -8,4 +8,3 @@ const TaskCardDeleteButton = () => {
   )
 }
 
-export default TaskCardDeleteButton

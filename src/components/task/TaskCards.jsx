@@ -1,8 +1,8 @@
 import React from "react";
-import AddTaskCardsButton from "./button/AddTaskCardsButton";
-import TaskCard from "./TaskCard";
+import {AddTaskCardsButton} from "./button/AddTaskCardsButton";
+import {TaskCard} from "./TaskCard";
 
-export default function TaskCards() {
+export const TaskCards = () => {
   return (
     <div>
       <TaskCard />

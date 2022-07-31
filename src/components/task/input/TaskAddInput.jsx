@@ -1,18 +1,29 @@
 import React from "react";
 
-const TaskAddInput = ({ inputText, setInputText, setTaskList, taskList }) => {
+export const TaskAddInput = ({
+  inputText,
+  setInputText,
+  setTaskList,
+  taskList,
+}) => {
   const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log(typeof(setTaskList))
-    // カードを追加する
-    setTaskList([...taskList, { text: inputText }]);
-    setInputText("");
+    e.preventDefault();
+    console.group("...taskList")
     console.log(...taskList);
     console.log(inputText);
+    // カードを追加する
+    setTaskList([
+      ...taskList,
+      {
+        text: inputText,
+      },
+    ]);
+    // setInputText('');
   };
 
   const handleChange = (e) => {
     setInputText(e.target.value);
+    console.log(inputText);
   };
 
   return (

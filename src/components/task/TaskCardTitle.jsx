@@ -1,7 +1,6 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 
-const TaskCardTitle = () => {
+export const TaskCardTitle = () => {
   const [isClick, setIsClick] = useState(false);
   const [inputCardTitle, setinputCardTitle] = useState("today");
 
@@ -49,4 +48,3 @@ const TaskCardTitle = () => {
   );
 };
 
-export default TaskCardTitle;

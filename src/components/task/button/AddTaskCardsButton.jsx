@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function AddTaskCardsButton() {
+export const AddTaskCardsButton = () => {
   return (
     <div>
       
