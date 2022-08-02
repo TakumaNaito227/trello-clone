@@ -6,24 +6,25 @@ export const TaskAddInput = ({
   setTaskList,
   taskList,
 }) => {
+  // enterが押された後の処理
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.group("...taskList")
-    console.log(...taskList);
-    console.log(inputText);
     // カードを追加する
+    if (inputText === ""){
+      return
+    }
     setTaskList([
       ...taskList,
       {
+        id: taskList.length,
         text: inputText,
       },
     ]);
-    // setInputText('');
+    setInputText('');
   };
 
   const handleChange = (e) => {
     setInputText(e.target.value);
-    console.log(inputText);
   };
 
   return (
@@ -40,5 +41,3 @@ export const TaskAddInput = ({
     </div>
   );
 };
-
-export default TaskAddInput;

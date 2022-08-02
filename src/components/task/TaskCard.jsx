@@ -14,10 +14,10 @@ export const TaskCard = () => {
       <TaskAddInput
         inputText={inputText}
         setInputText={setInputText}
-        setTextList={setTaskList}
+        setTaskList={setTaskList}
         taskList={taskList}
       />
-      <Tasks inputText={inputText} taskList={taskList} />
+      <Tasks inputText={inputText} taskList={taskList} setTaskList={setTaskList}/>
     </div>
   );
 }
