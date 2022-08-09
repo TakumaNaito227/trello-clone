@@ -1,17 +1,30 @@
-import React from 'react'
+import React from "react";
+import { Droppable } from "react-beautiful-dnd";
 
-export const Task = ({task, taskList, setTaskList}) => {
+export const Task = ({ task, taskList, setTaskList }) => {
   const handleDelete = (id) => {
     setTaskList(taskList.filter((task) => task.id !== id));
   };
 
   return (
-    <div className="taskBox">
-      <p className="taskText">
-        {task.text}
-      </p>
-      <button className="taskTrashButton" onClick={() => handleDelete(task.id)}>
-      <i class="fa-solid fa-trash-can"></i></button>
-    </div>
-  )
-}
+    <Droppable index={task.id} droppableId={task.droppableId}>
+      {(provided) => (
+        <div
+          className="taskBox"
+          key={task.id}
+          ref={provided.innerRef}
+          {...provided.droppableProps}
+          {...provided.dragHandleProps}
+        >
+          <p className="taskText">{task.text}</p>
+          <button
+            className="taskTrashButton"
+            onClick={() => handleDelete(task.id)}
+          >
+            <i className="fa-solid fa-trash-can"></i>
+          </button>
+        </div>
+      )}
+    </Droppable>
+  );
+};
