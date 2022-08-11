@@ -6,7 +6,7 @@ export const Tasks = ({ taskList, setTaskList }) => {
   return (
     <div>
       <DragDropContext>
-        <Droppable droppableId="droppsble">
+        <Droppable droppableId="droppable">
           {(provided) => (
             <div {...provided.droppableProps} ref={provided.innerRef}>
               {taskList.map((task) => (

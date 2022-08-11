@@ -1,5 +1,5 @@
 import React from "react";
-import { Droppable } from "react-beautiful-dnd";
+import { Draggable } from "react-beautiful-dnd";
 
 export const Task = ({ task, taskList, setTaskList }) => {
   const handleDelete = (id) => {
@@ -7,13 +7,13 @@ export const Task = ({ task, taskList, setTaskList }) => {
   };
 
   return (
-    <Droppable index={task.id} droppableId={task.droppableId}>
+    <Draggable index={task.id} draggableId={task.draggableId}>
       {(provided) => (
         <div
           className="taskBox"
           key={task.id}
           ref={provided.innerRef}
-          {...provided.droppableProps}
+          {...provided.draggableProps}
           {...provided.dragHandleProps}
         >
           <p className="taskText">{task.text}</p>
@@ -25,6 +25,6 @@ export const Task = ({ task, taskList, setTaskList }) => {
           </button>
         </div>
       )}
-    </Droppable>
+    </Draggable>
   );
 };
