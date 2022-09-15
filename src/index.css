@@ -109,7 +109,7 @@ header {
   transform: translate(3px 3px);
 } */
 
-.taskCardTitleAndTaskCardDeleteButton{
+.taskCardTitleAndTaskCardDeleteButtonArea{
   display: flex;
   justify-content:space-between;
 }
