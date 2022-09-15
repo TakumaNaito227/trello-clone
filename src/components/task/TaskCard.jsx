@@ -1,23 +1,30 @@
 import React, { useState } from "react";
-import { TaskAddInput } from "./input/TaskAddInput";
-import { TaskCardDeleteButton } from "./button/TaskCardDeleteButton";
 import { TaskCardTitle } from "./TaskCardTitle";
+import { TaskCardDeleteButton } from "./button/TaskCardDeleteButton";
+import { TaskAddInput } from "./input/TaskAddInput";
 import { Tasks } from "./Tasks";
 import { Draggable } from "react-beautiful-dnd";
 
-export const TaskCard = ({ taskCardsList, setTaskCardsList, taskCard, index }) => {
+export const TaskCard = ({
+  taskCardsList,
+  setTaskCardsList,
+  taskCard,
+  index,
+}) => {
   const [inputText, setInputText] = useState("");
   const [taskList, setTaskList] = useState([]);
   return (
     <Draggable draggableId={taskCard.id} index={index}>
-      {(provided) => {
+      {(provided) => (
         <div
           className="taskCard"
           ref={provided.innerRef}
           {...provided.draggableProps}
-          {...provided.dragHandleProps}
         >
-          <div className="taskCardTitleAndTaskCardDeleteButtonArea">
+          <div
+            className="taskCardTitleAndTaskCardDeleteButtonArea"
+            {...provided.dragHandleProps}
+          >
             <TaskCardTitle />
             <TaskCardDeleteButton
               taskCardsList={taskCardsList}
@@ -36,8 +43,8 @@ export const TaskCard = ({ taskCardsList, setTaskCardsList, taskCard, index }) =
             taskList={taskList}
             setTaskList={setTaskList}
           />
-        </div>;
-      }}
+        </div>
+      )}
     </Draggable>
   );
 };
