@@ -12,12 +12,12 @@ export const TaskCard = ({ taskCardsList, setTaskCardsList, taskCard, index }) =
     <Draggable draggableId={taskCard.id} index={index}>
       {(provided) => {
         <div
-          className="taskCard"index
+          className="taskCard"
           ref={provided.innerRef}
           {...provided.draggableProps}
           {...provided.dragHandleProps}
         >
-          <div className="taskCardTitleAndTaskCardDeleteButton">
+          <div className="taskCardTitleAndTaskCardDeleteButtonArea">
             <TaskCardTitle />
             <TaskCardDeleteButton
               taskCardsList={taskCardsList}

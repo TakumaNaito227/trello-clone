@@ -6,7 +6,7 @@ export const TaskCardDeleteButton = ({
   taskCard,
 }) => {
   const taskCardDeleteButton = (id) => {
-    // タスクカードを削除する
+    // タスクカード削除
     setTaskCardsList(taskCardsList.filter((e) => e.id !== id));
   };
   return (
